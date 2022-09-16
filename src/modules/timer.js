@@ -3,7 +3,6 @@ const timer = (deadLine) => {
     const timerHours = document.getElementById('timer-hours');
     const timerMinutes = document.getElementById('timer-minutes');
     const timerSeconds = document.getElementById('timer-seconds');
-    let getTime;
 
     const getTimeRemaining = () => {
         let dateStop = new Date(deadLine).getTime();
@@ -18,27 +17,32 @@ const timer = (deadLine) => {
 
     
     const updateClock = () => {
-        getTime = getTimeRemaining();
-        if (getTime.timeRemaining > 0) {
+        // const getTime = getTimeRemaining();
+        const {timeRemaining, hours, minutes, seconds} = getTimeRemaining();
+        console.log(timeRemaining);
+        console.log(hours);
+        console.log(minutes);
+        console.log(seconds);
+        if (timeRemaining > 0) {
             if (+timerHours.textContent <= 10 && +timerHours.textContent >= 1) {
-                timerHours.textContent = '0' + getTime.hours;
+                timerHours.textContent = '0' + hours;
             }
             else {
-                timerHours.textContent = getTime.hours;
+                timerHours.textContent = hours;
             }
 
             if (+timerMinutes.textContent <= 10 && +timerMinutes.textContent >= 1) {
-                timerMinutes.textContent = '0' + getTime.minutes;
+                timerMinutes.textContent = '0' + minutes;
             }
             else {
-                timerMinutes.textContent = getTime.minutes;
+                timerMinutes.textContent = minutes;
             }
 
             if (+timerSeconds.textContent <= 10 && +timerSeconds.textContent >= 1) {
-                timerSeconds.textContent = '0' + getTime.seconds
+                timerSeconds.textContent = '0' + seconds
             }
             else {
-                timerSeconds.textContent = getTime.seconds;
+                timerSeconds.textContent = seconds;
             }
             
         }
@@ -46,11 +50,12 @@ const timer = (deadLine) => {
         
     }
     let startClock = () => {
+            updateClock();  
             setInterval(() => {
                 updateClock()
             }, 1000) 
     }
-    updateClock();
+
     startClock();
     
 }
