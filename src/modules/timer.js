@@ -50,7 +50,7 @@ const timer = (deadLine) => {
                 updateClock()
             }, 1000) 
     }
-    
+    updateClock();
     startClock();
     
 }
