@@ -17,39 +17,42 @@ const timer = (deadLine) => {
 
     
     const updateClock = () => {
-        // const getTime = getTimeRemaining();
         const {timeRemaining, hours, minutes, seconds} = getTimeRemaining();
+        console.log("tik");
         if (timeRemaining > 0) {
-            if (+timerHours.textContent <= 10 && +timerHours.textContent >= 1) {
+            if (hours < 10) {
                 timerHours.textContent = '0' + hours;
             }
             else {
                 timerHours.textContent = hours;
             }
 
-            if (+timerMinutes.textContent <= 10 && +timerMinutes.textContent >= 1) {
+            if (minutes < 10) {
                 timerMinutes.textContent = '0' + minutes;
             }
             else {
                 timerMinutes.textContent = minutes;
             }
 
-            if (+timerSeconds.textContent <= 10 && +timerSeconds.textContent >= 1) {
+            if (seconds < 10) {
                 timerSeconds.textContent = '0' + seconds
             }
             else {
                 timerSeconds.textContent = seconds;
-            }
-            
+            }       
         }
         
         
     }
     let startClock = () => {
             updateClock();  
-            setInterval(() => {
-                updateClock()
-            }, 1000) 
+            let idInterval = setInterval(() => {
+                const {timeRemaining} = getTimeRemaining();
+                if (timeRemaining < 0) {
+                    clearInterval(idInterval);
+                }
+                updateClock();
+            }, 1000);
     }
 
     startClock();
