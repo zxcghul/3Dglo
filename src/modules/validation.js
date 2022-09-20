@@ -3,7 +3,6 @@ const validation = () => {
     const inputsArea = document.querySelectorAll('.form-name, .mess, #form2-name');
     const inputsEmail = document.querySelectorAll('input[type=email]');
     const inputsTel = document.querySelectorAll('input[type=tel]');
-    console.log(inputsTel);
 
     const validationTel = () => {
         inputsTel.forEach((item) => {
@@ -36,6 +35,7 @@ const validation = () => {
             });
         });
     };
+
     validationTel();
     validationEmail();
     validationArea();
