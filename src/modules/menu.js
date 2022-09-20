@@ -9,7 +9,6 @@ const menu = () => {
 
     const toggleMenu = () => {
         document.addEventListener('click', (e) => {
-            console.log(e.target);
             if (e.target.closest('.menu') || e.target === closeBtn) {
                 handMenu();
             } else if (!e.target.closest('.active-menu')) {
