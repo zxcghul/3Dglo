@@ -3,8 +3,6 @@ const tabs = () => {
     const tabContent = document.querySelectorAll('.service-tab');
     const tabs = document.querySelectorAll('.service-header-tab');
 
-
-    console.log(tabPanel);
     tabPanel.addEventListener('click', (e) => {
         if (e.target.closest('.service-header-tab')) {
             const tabBtn = e.target.closest('.service-header-tab');

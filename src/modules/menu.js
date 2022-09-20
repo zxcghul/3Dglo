@@ -1,5 +1,4 @@
 const menu = () => {
-    const menuBtn = document.querySelector('.menu');
     const menu = document.querySelector('menu');
     const closeBtn = menu.querySelector('.close-btn');
     const menuItems = menu.querySelectorAll('ul>li>a');
@@ -10,9 +9,13 @@ const menu = () => {
 
     const toggleMenu = () => {
         document.addEventListener('click', (e) => {
-            if (e.target === menuBtn || e.target === closeBtn || !e.target.closest('.active-menu')) {
+            console.log(e.target);
+            if (e.target.closest('.menu') || e.target === closeBtn) {
                 handMenu();
+            } else if (!e.target.closest('.active-menu')) {
+                menu.classList.remove('active-menu')
             }
+
             menuItems.forEach (item => {
                 if (e.target === item) {
                     handMenu();
