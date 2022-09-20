@@ -4,13 +4,24 @@ const menu = () => {
     const closeBtn = menu.querySelector('.close-btn');
     const menuItems = menu.querySelectorAll('ul>li>a');
     
-    const handMenu = (d => {
+    const handMenu = (() => {
         menu.classList.toggle('active-menu')
     });
 
-    menuBtn.addEventListener('click', handMenu);
-    closeBtn.addEventListener('click', handMenu);
-    menuItems.forEach(menuItem => menuItem.addEventListener('click', handMenu));
+    const toggleMenu = () => {
+        document.addEventListener('click', (e) => {
+            if (e.target === menuBtn || e.target === closeBtn || !e.target.closest('.active-menu')) {
+                handMenu();
+            }
+            menuItems.forEach (item => {
+                if (e.target === item) {
+                    handMenu();
+                }  
+            });
+        })
+    };
+
+    toggleMenu();
 }
 
 export default menu

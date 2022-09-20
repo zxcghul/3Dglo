@@ -1,8 +1,7 @@
 const modal = () => {
 
     const modal = document.querySelector('.popup'),
-        buttons = document.querySelectorAll('.popup-btn'),
-        closeBtn = modal.querySelector('.popup-close');
+        buttons = document.querySelectorAll('.popup-btn');
     let count = 0,
         idInterval;
 
@@ -28,17 +27,19 @@ const modal = () => {
                 cancelAnimationFrame(animationClose);
                 modal.style.display = 'none';
             }   
-        }
+        };
 
 
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
             requestAnimationFrame(animationOpen);
         })
-    })
+    });
 
-    closeBtn.addEventListener('click', () => {
-        requestAnimationFrame(animationClose);
+    modal.addEventListener('click', (e) => {
+        if (!e.target.closest('.popup-content') || e.target.classList.contains('popup-close')) {
+            requestAnimationFrame(animationClose);
+        } 
     })
 }
 
