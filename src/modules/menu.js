@@ -3,23 +3,17 @@ const menu = () => {
     const closeBtn = menu.querySelector('.close-btn');
     const menuItems = menu.querySelectorAll('ul>li>a');
     
-    const handMenu = (() => {
-        menu.classList.toggle('active-menu')
-    });
-
     const toggleMenu = () => {
         document.addEventListener('click', (e) => {
             if (e.target.closest('.menu') || e.target === closeBtn) {
-                handMenu();
+                menu.classList.toggle('active-menu');
             } else if (!e.target.closest('.active-menu')) {
-                menu.classList.remove('active-menu')
-            }
-
-            menuItems.forEach (item => {
-                if (e.target === item) {
-                    handMenu();
-                }  
-            });
+                menu.classList.remove('active-menu');
+            } else if (e.target.closest('a')) {
+                menu.classList.remove('active-menu');
+            } 
+             
+            
         })
     };
 

@@ -1,11 +1,17 @@
 const slider = () => {
     const sliderBlock = document.querySelector('.portfolio-content');
     const slides = document.querySelectorAll('.portfolio-item');
-    const dots = document.querySelectorAll('.dot');
+    const portDots = document.querySelector('.portfolio-dots')
     const timeInterval = 2000;
     let currentSlide = 0;
     let interval;
+    let dots;
 
+    for (let index = 0; index < slides.length; index++) {
+        portDots.insertAdjacentHTML('beforeend', '<li class="dot"></li>');
+        dots = document.querySelectorAll('.dot');
+        dots[0].classList.add('dot-active');
+    }
 
     const prevSlide = (elems, index, strClass) => {
         elems[index].classList.remove(strClass);
@@ -14,20 +20,20 @@ const slider = () => {
     const nextSlide = (elems, index, strClass) => {
         elems[index].classList.add(strClass);
     }
-    
+
     const autoSlide = () => {
         prevSlide(slides, currentSlide, 'portfolio-item-active');
         prevSlide(dots, currentSlide, 'dot-active');
         currentSlide++;
         if (currentSlide >= slides.length) {
-            currentSlide = 0
+            currentSlide = 0;
         };
         nextSlide(slides, currentSlide, 'portfolio-item-active');
         nextSlide(dots, currentSlide, 'dot-active');
     }
 
     const startSlide = (timer = 1500) => {
-        interval = setInterval(autoSlide, timer)
+        interval = setInterval(autoSlide, timer);
     }
 
     const stopSlide = () => {
@@ -56,7 +62,7 @@ const slider = () => {
             })
         }
         if (currentSlide >= slides.length) {
-            currentSlide = 0
+            currentSlide = 0;
         }
         if (currentSlide < 0) {
             currentSlide = slides.length - 1;
