@@ -36,7 +36,7 @@ const calc = (price = 100) => {
     calcBlock.addEventListener('change', (e) => {
         if (e.target === calcType || e.target === calcSquare ||
             e.target === calcCount || e.target === calcDay) {
-            countCalc();
+            countCalc()
         }
     })
 }
