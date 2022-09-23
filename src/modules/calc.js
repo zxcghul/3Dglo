@@ -31,6 +31,7 @@ const calc = (price = 100) => {
         } else {
             totalValue = 0;
         }
+        total.textContent = totalValue;
     }
 
     calcBlock.addEventListener('change', (e) => {
@@ -38,6 +39,8 @@ const calc = (price = 100) => {
             e.target === calcCount || e.target === calcDay) {
             countCalc()
         }
+
+        
     })
 }
 
