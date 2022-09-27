@@ -13,7 +13,7 @@ const modal = () => {
                   return timeFraction;
                 },
                 draw(progress) {
-                    animateOpen(progress);
+                    animateOpen(progress, modal);
                 }
               });
         })
@@ -27,7 +27,7 @@ const modal = () => {
                   return timeFraction;
                 },
                 draw(progress) {
-                      animateClose(progress);      
+                      animateClose(progress, modal);      
                 }
               });
         } 

@@ -17,23 +17,23 @@ function animate({timing, draw, duration}) {
     });
   }
 
-const animateOpen = (count) => {
-    modal.style.display = 'block';
+const animateOpen = (count, item) => {
+    item.style.display = 'block';
     if (document.body.clientWidth > 768) {
-            modal.style.opacity = count;
+        item.style.opacity = count;
     } else {
-        modal.style.opacity = 1;
+        item.style.opacity = 1;
     }
 }
 
-const animateClose = (count) => {
+const animateClose = (count, item) => {
     if (document.body.clientWidth > 768) {
-        modal.style.opacity = (1 - count);
+        item.style.opacity = (1 - count);
     } else {
-        modal.style.opacity = 0;
+        item.style.opacity = 0;
     }
-    if (modal.style.opacity == 0) {
-        modal.style.display = 'none'; 
+    if (item.style.opacity == 0) {
+        item.style.display = 'none'; 
     }
 }
 
