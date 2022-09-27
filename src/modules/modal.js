@@ -1,29 +1,9 @@
-import { animate } from "./helpers" 
+import { animate, animateOpen, animateClose } from "./helpers" 
 
 const modal = () => {
 
     const modal = document.querySelector('.popup'),
         buttons = document.querySelectorAll('.popup-btn');
-
-    const animateOpen = (count) => {
-        modal.style.display = 'block';
-        if (document.body.clientWidth > 768) {
-                modal.style.opacity = count;
-        } else {
-            modal.style.opacity = 1;
-        }
-    }
-
-    const animateClose = (count) => {
-        if (document.body.clientWidth > 768) {
-            modal.style.opacity = (1 - count);
-        } else {
-            modal.style.opacity = 0;
-        }
-        if (modal.style.opacity == 0) {
-            modal.style.display = 'none'; 
-        }
-    }
     
     buttons.forEach(btn => {
         btn.addEventListener('click', () => {
