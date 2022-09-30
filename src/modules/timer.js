@@ -18,7 +18,6 @@ const timer = (deadLine) => {
     
     const updateClock = () => {
         const {timeRemaining, hours, minutes, seconds} = getTimeRemaining();
-        console.log("tik");
         if (timeRemaining > 0) {
             if (hours < 10) {
                 timerHours.textContent = '0' + hours;
