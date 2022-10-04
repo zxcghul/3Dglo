@@ -4,7 +4,7 @@ const validateTrue = (massive) => {
     massive.forEach(elem => {
         if (elem.type === 'tel') {
 
-            (elem.value.length >= 6 && elem.value.length <= 11) ? (
+            (elem.value.length >= 6 && elem.value.length <= 12) ? (
                 elem.classList.add('success'),
                 elem.classList.remove('error')
             ) : (
@@ -15,7 +15,7 @@ const validateTrue = (massive) => {
         }
 
         if (elem.type === 'text') {
-            
+
             (elem.value.length >= 2) ? (
                 elem.classList.add('success'),
                 elem.classList.remove('error')

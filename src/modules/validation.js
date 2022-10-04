@@ -7,7 +7,7 @@ const validation = () => {
     const validationTel = () => {
         inputsTel.forEach((item) => {
             item.addEventListener('input', (e) => {
-                e.target.value = e.target.value.replace(/[^0-9-()]+/,"")
+                e.target.value = e.target.value.replace(/[^0-9+]+/,"")
             });
         });
     };
