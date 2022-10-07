@@ -38,7 +38,12 @@ const animateClose = (count, item) => {
 }
 
 const animateJump = (count, item) => {
-    item.style.top
+    if (count < 0.9 && count > 0) {
+        item.style.top = (count * (-200)) + "px";
+    } else {
+        item.style.top = 0 + 'px';
+    }
+    
 }
 
 

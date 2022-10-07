@@ -24,7 +24,7 @@ const modal = () => {
             animate({
                 duration: 300,
                 timing(timeFraction) {
-                  return timeFraction;
+                    return timeFraction;
                 },
                 draw(progress) {
                       animateClose(progress, modal);      

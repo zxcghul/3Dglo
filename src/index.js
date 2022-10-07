@@ -17,7 +17,7 @@ validation();
 tabs();
 slider();
 calc();
-jumpElement();
+jumpElement(document.querySelector('main a'));
 slowScrollLink();
 sendForm({ formId: 'form1',
            someElem: [
