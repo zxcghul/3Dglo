@@ -63,13 +63,10 @@ const sendForm = ({
                         input.classList.remove('success')
                         
                     });
-                    console.log(data);
                 })
                 .catch(error => {
                     statusBlock.textContent = errorText;
                 })
-        } else {
-            console.log('не валидны');
         }
         setTimeout(() => {
             statusBlock.textContent = '';

@@ -37,4 +37,6 @@ const animateClose = (count, item) => {
     }
 }
 
-export { animate, animateOpen, animateClose }
+
+
+export { animate, animateOpen, animateClose}
