@@ -37,6 +37,10 @@ const animateClose = (count, item) => {
     }
 }
 
+const animateJump = (count, item) => {
+    item.style.top
+}
 
 
-export { animate, animateOpen, animateClose}
+
+export { animate, animateOpen, animateClose, animateJump}
